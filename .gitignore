@@ -1,0 +1,7 @@
+.cache/
+.vscode/
+[Bb]uild/
+[Tt]emp/
+*.user
+*.user.*
+*.qm
