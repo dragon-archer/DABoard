@@ -1,0 +1,5 @@
+name = "default"
+defines = {
+	boardRowCount = 3
+	boardColumnCount = 3
+}
