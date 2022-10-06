@@ -1,4 +1,6 @@
 #include "pch.h"
+#include "config.h"
+#include "datastore.h"
 #include "mainwindow.h"
 
 int main(int argc, char* argv[]) {
@@ -10,6 +12,10 @@ int main(int argc, char* argv[]) {
 #endif
 
 	QApplication a(argc, argv);
+
+	auto& ds = da::DataStore::getInstance();
+	ds.readData(DEFAULT_DATAFILE);
+	spdlog::debug(ds.data().dump(4));
 
 	MainWindow w;
 	w.show();

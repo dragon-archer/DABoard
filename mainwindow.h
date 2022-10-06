@@ -2,6 +2,7 @@
 #define _DABOARD_MAINWINDOW_H_
 
 #include "pch.h"
+#include "config.h"
 
 class MainWindow : public QMainWindow {
 	Q_OBJECT

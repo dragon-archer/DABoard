@@ -12,16 +12,23 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 find_package(fmt REQUIRED)
+find_package(nlohmann_json REQUIRED)
 find_package(spdlog REQUIRED)
 
 message(STATUS "${Qt6_DIR}")
 message(STATUS "${fmt_DIR}")
+message(STATUS "${nlohmann_json_DIR}")
 message(STATUS "${spdlog_DIR}")
 
 set(DABOARD_SRC
+	config.h
+	datastore.h
+	datastore.cpp
 	main.cpp
 	mainwindow.cpp
 	mainwindow.h
+	parser.cpp
+	parser.h
 )
 
 set(DABOARD_PCH pch.h)
@@ -29,6 +36,7 @@ set(DABOARD_PCH pch.h)
 set(DABOARD_LIB
 	Qt6::Widgets
 	fmt::fmt
+	nlohmann_json::nlohmann_json
 	spdlog::spdlog
 )
 
@@ -40,6 +48,13 @@ qt_add_executable(daboard
 
 target_precompile_headers(daboard PRIVATE ${DABOARD_PCH})
 target_link_libraries(daboard PRIVATE ${DABOARD_LIB})
+
+add_custom_command(
+	TARGET daboard POST_BUILD
+	COMMAND ${CMAKE_COMMAND} -E copy_directory
+			${CMAKE_SOURCE_DIR}/data
+			${CMAKE_BINARY_DIR}/data
+)
 
 qt_finalize_executable(daboard)
 
