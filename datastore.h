@@ -24,7 +24,7 @@ namespace da {
 		DataStore operator=(DataStore&&)	  = delete;
 
 	public:
-		bool readData(std::filesystem::path filename);
+		bool readData(StringView filename);
 
 		inline constexpr Data& data() {
 			return _data;

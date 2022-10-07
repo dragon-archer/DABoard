@@ -5,11 +5,8 @@
 
 int main(int argc, char* argv[]) {
 	// Init spdlog
-#ifndef NDEBUG
-	spdlog::set_level(spdlog::level::trace);
-#else
-	spdlog::set_level(spdlog::level::warn);
-#endif
+	spdlog::set_level(DEFAULT_LOG_LEVEL);
+	spdlog::set_pattern(DEFAULT_LOG_PATTERN);
 
 	QApplication a(argc, argv);
 
