@@ -43,7 +43,7 @@ namespace da {
 		do {
 			if(!ignoreBracket) {
 				if(peekNextToken() == TokenType::Operator) {
-					_VERIFY(nextOperator() == Operator::RightBracket);
+					_VERIFY(nextOperator() == Operator::RightBrace);
 					return true;
 				}
 			}
@@ -96,7 +96,7 @@ namespace da {
 			return true;
 		}
 		case TokenType::Operator: {
-			_VERIFY(nextOperator() == Operator::LeftBracket);
+			_VERIFY(nextOperator() == Operator::LeftBrace);
 			result[0] = DataType::Compound;
 			result[1] = LHS;
 			_VERIFY(parseCompound(result[2], false));

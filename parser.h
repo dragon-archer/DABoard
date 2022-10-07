@@ -42,14 +42,14 @@ namespace da {
 	enum class Operator {
 		Error,
 		Equal,
-		LeftBracket,
-		RightBracket,
+		LeftBrace,
+		RightBrace,
 	};
 
 	inline static const Map<Char, Operator> OperatorList {
 		{ '=', Operator::Equal },
-		{ '{', Operator::LeftBracket },
-		{ '}', Operator::RightBracket },
+		{ '{', Operator::LeftBrace },
+		{ '}', Operator::RightBrace },
 	};
 
 	enum class Keyword {
