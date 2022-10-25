@@ -24,6 +24,8 @@ set(DABOARD_SRC
 	config.h
 	datastore.h
 	datastore.cpp
+	jsonwrapper.h
+	jsonwrapper.cpp
 	main.cpp
 	mainwindow.cpp
 	mainwindow.h
