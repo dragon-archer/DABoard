@@ -1,5 +1,12 @@
 name = "default"
-defines = {
-	boardRowCount = 3
-	boardColumnCount = 3
+ui = {
+	rowCount = 3
+	columnCount = 3
+	cellSize = 150
+	leftMargin = 50
+	rightMargin = 100
+	topMargin = 50
+	bottomMargin = 60
+	menuBarHeight = 32
+	statusBarHeight = 24
 }

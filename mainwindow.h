@@ -3,6 +3,8 @@
 
 #include "pch.h"
 #include "config.h"
+#include "datastore.h"
+#include "jsonwrapper.h"
 
 class MainWindow : public QMainWindow {
 	Q_OBJECT
@@ -13,6 +15,9 @@ public:
 
 public Q_SLOTS:
 	void onCellClicked(int row, int col);
+
+private:
+	void initUi();
 
 private:
 	QWidget*	_central;

@@ -10,9 +10,7 @@ int main(int argc, char* argv[]) {
 
 	QApplication a(argc, argv);
 
-	auto& ds = da::DataStore::getInstance();
-	ds.readData(DEFAULT_DATAFILE);
-	spdlog::debug(ds.data().dump(4));
+	DataStore::getInstance().readData(DEFAULT_DATAFILE);
 
 	MainWindow w;
 	w.show();
